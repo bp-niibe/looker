@@ -93,6 +93,11 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
+  dimension: shipping_days {
+    type: number
+    sql: DATE_DIFF(${TABLE}.shipped ,${TABLE}.delivered, DAY);;
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]

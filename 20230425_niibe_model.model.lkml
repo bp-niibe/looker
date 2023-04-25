@@ -7,6 +7,9 @@ include: "/**/*.view.lkml"                 # include all views in this project
 # # Select the views that should be a part of this model,
 # # and define the joins that connect them together.
 #
-explore: events {
-
-}
+explore: distribution_centers{}
+explore: events {}
+explore: inventory_items {}
+explore: order_items {}
+explore: products {}
+explore: users {}

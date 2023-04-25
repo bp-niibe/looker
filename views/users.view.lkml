@@ -89,6 +89,16 @@ view: users {
     sql: ${TABLE}.traffic_source ;;
   }
 
+  dimension: city_state {
+    type: string
+    sql: ${TABLE}.city || ',' || ${TABLE}.state;;
+  }
+
+  dimension: is_email_source {
+    type: yesno
+    sql: ${TABLE}.traffic_source ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, last_name, first_name, order_items.count, events.count]
